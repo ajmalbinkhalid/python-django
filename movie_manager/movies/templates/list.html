@@ -1,0 +1,16 @@
+{% extends 'blank_layout.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>MOVIES LIST</h1>
+
+    {% for movie_obj in movies %}
+    
+    <h1>title :{{movie_obj.title | upper}}</h1>
+    <h2>summary :{{movie_obj.description | default:'no data available'}}</h2>
+    <h3>year :{{movie_obj.year}}</h3>
+    
+    {% endfor %}
+
+{% endblock content %}
+

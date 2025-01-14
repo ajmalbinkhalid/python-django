@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for movie_obj in movies %}
+    <h1>title :{{movie_obj.title | upper}}</h1>
+    <h2>summary :{{movie_obj.summary | default:'no data available'}}</h2>
+    <h3>year :{{movie_obj.year}}</h3>
+    {% if movie_obj.success %}
+    <p>Movie was success at that time</p>
+    {% else %}
+    <p>An average movie</p>
+    {% endif %}
+    {% endfor %}
+   
+</body>
+</html>
