@@ -3,14 +3,20 @@
 
 {% block content %}
     <h1>MOVIES LIST</h1>
+    <table>
+        <tr>
+            <th>TITLE</th>
+            <th>DESCRIPTION</th>
+            <th>YEAR</th>
+        </tr>
 
     {% for movie_obj in movies %}
-    
-    <h1>title :{{movie_obj.title | upper}}</h1>
-    <h2>summary :{{movie_obj.description | default:'no data available'}}</h2>
-    <h3>year :{{movie_obj.year}}</h3>
-    
+    <tr>
+    <td><h1>title :{{movie_obj.title | upper}}</h1></td>
+    <td><h2>summary :{{movie_obj.description | default:'no data available'}}</h2></td>
+    <td><h3>year :{{movie_obj.year}}</h3></td>
+    </tr>
     {% endfor %}
-
+    </table>
 {% endblock content %}
 
