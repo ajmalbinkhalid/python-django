@@ -6,10 +6,10 @@ from . models import MovieInfo
 from . forms import MovieForm
 
 def create(request):
-    frm=MovieForm
+    
     if request.POST:
          
-         frm=MovieForm(request.POST)
+         frm=MovieForm(request.POST,request.FILES)
          if frm.is_valid:
               frm.save()
     else:     

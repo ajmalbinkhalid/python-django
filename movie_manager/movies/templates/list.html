@@ -12,10 +12,16 @@
 
     {% for movie_obj in movies %}
     <tr>
+    <td>
+        {% if movie_obj.poster %}
+        <img src="{{movie_obj.poster.url}}" alt="" style="width: 40px;"></img>
+        {% endif %}
+    </td>    
     <td><h1>Title :{{movie_obj.title | upper}}</h1></td>
     <td><h2>Summary :{{movie_obj.description | default:'no data available'}}</h2></td>
     <td><h3>Year :{{movie_obj.year}}</h3></td>
     <td><h3><a href="{% url 'edit' movie_obj.id %}">Edit</a>/<a href="{% url 'delete' movie_obj.id %}">Delete</a></h3></td>
+    
     </tr>
     {% endfor %}
     </table>

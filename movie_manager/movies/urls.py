@@ -23,3 +23,4 @@ urlpatterns = [
     path('list/<pk>', views.list, name='list'),
     path('', views.list, name='list'),
 ]
+
