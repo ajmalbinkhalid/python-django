@@ -10,7 +10,7 @@ def create(request):
     if request.POST:
          
          frm=MovieForm(request.POST,request.FILES)
-         if frm.is_valid:
+         if frm.is_valid():
               frm.save()
     else:     
          frm=MovieForm()
@@ -18,7 +18,7 @@ def create(request):
 
 def list(request):
 
-        movie_set=MovieInfo.objects.all()
+        movie_set=MovieInfo.objects.filter(title__startswith='j')
         print(movie_set)
      
         return render(request,'list.html',{'movies': movie_set})
