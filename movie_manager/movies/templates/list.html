@@ -2,6 +2,11 @@
 {% load static %}
 
 {% block content %}
+
+{% for movie_obj in recent_movies %}
+<p>{{ movie_obj.title }}</p>
+
+{% endfor %}
     <h1>MOVIES LIST {{ visits }} times visited </h1>
     <table>
         <tr>
