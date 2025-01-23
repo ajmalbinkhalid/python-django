@@ -17,11 +17,14 @@ def create(request):
     return render(request,'create.html',{'frm': frm})
 
 def list(request):
-
+        print(request.COOKIES)
+        visits=int(request.COOKIES.get('visits',0))
+        visits=visits+1
         movie_set=MovieInfo.objects.filter(title__startswith='j')
         print(movie_set)
-     
-        return render(request,'list.html',{'movies': movie_set})
+        response=render(request,'list.html',{'movies': movie_set,'visits':visits})
+        response.set_cookie('visits',visits)
+        return response
 
 def edit(request,pk):
      instance_to_be_edited=MovieInfo.objects.get(pk=pk)
