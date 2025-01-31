@@ -10,6 +10,15 @@
     <button type="submit"> submit</button>
 
 </form>
-
+<p>
+    {% if user %}
+    new user created with username {{ user.username }}
+    {% endif %}
+</p>
+<p style="background-color: red;">
+    {% if error_message %}
+    new user created with username {{ error_message }}
+    {% endif %}
+</p>
 {% endblock content %}
 

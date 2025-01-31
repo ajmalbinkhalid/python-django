@@ -1,0 +1,18 @@
+{% extends 'blank_layout.html' %}
+
+{% block content %}
+
+<h1>Create user</h1>
+
+<form method="post" enctype="multipart/form-data">
+    
+    {% csrf_token %}
+   <p> <label for="">User name:</label><input type="text" name="username" ></p>
+   <p> <label for="">Password:</label><input type="password" name="password" ></p>
+   
+<button type="submit"> signup</button>
+
+</form>
+
+{% endblock content %}
+
